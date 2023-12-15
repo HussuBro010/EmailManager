@@ -5,13 +5,10 @@ import json
 title = pyfiglet.figlet_format("Email Manager", font="digital")
 print(title)
 
-jsonDict = {}
-
-
 def addEmail(label: str, email: str, pswd: str):
-    jsonDict[label] = {"Email": email, "Password": pswd}
+    dataDict = {label:{"Email": email, "Password": pswd}}
     f = open(f"emailDatas/{label}.json", "a")
-    f.write(json.dumps(jsonDict, indent=4))
+    f.write(json.dumps(dataDict, indent=4))
 
 
 
